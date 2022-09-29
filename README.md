@@ -1,0 +1,3 @@
+# 1min
+
+It takes about a minute to complete the code...
