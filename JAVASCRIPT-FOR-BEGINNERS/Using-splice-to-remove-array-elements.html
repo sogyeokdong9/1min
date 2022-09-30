@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using splice to remove array elements</title>
+</head>
+<body>
+  <script>
+    const numbers = [1, 2, 3, 4, 5];
+          // index  0  1  2  3  4
+    console.log(numbers);
+
+    numbers.splice(0, 3);
+    console.log(numbers);
+    // first number is starting index
+    // secound number is the number of elements to remove
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>get nth character of a string, first char and last char</title>
+</head>
+<body>
+  <div id="myDiv">1234567890</div>
+  <script>
+    let str = document.getElementById('myDiv').innerText;
+    console.log(str);
+    
+    let firstChar = str.charAt(0);
+    console.log(firstChar);
+    let seventhChar = str.charAt(6);
+    console.log(seventhChar);
+    let lastChar = str.at(-1);
+    console.log(lastChar);
+
+    // or
+
+    console.log(str[0]);
+    console.log(str[6]);
+    console.log(str[str.length - 1]);
+  </script>
+</body>
+</html>

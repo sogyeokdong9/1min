@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get current month name using months array and using toLocalString() method</title>
+</head>
+<body>
+  <script>
+    let date = new Date();
+    let month = date.getMonth();
+    console.log(month);
+    // month start from 0 1 2 3 ...
+
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    let currentMonthName = monthNames[month];
+
+    // or... toLocaleString
+
+    currentMonthName = date.toLocaleString('default',{month:'long'});
+    console.log(currentMonthName);
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to toggle background color of a div using an HTML button</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: tomato;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      padding: 1em;
+    }
+    #container {
+      margin:1em;
+      padding:1em;
+      background-color: navy;
+      color: white;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>How to toggle background color of a div using an HTML button</h1>
+  <input type="button" id="toggleBackgroundColor" value="Toggle Background Color">
+  <div id="container">Container</div>
+  <script>
+    const toggleBackgroundColor = document.getElementById('toggleBackgroundColor');
+
+    toggleBackgroundColor.addEventListener('click', function() {
+      let target = document.getElementById('container');
+      let background = document.body;
+
+      if (target.style.backgroundColor === "navy" || target.style.backgroundColor === '' ) {
+        target.style.backgroundColor = 'tomato';
+        background.style.backgroundColor = 'navy';
+      } else {
+        target.style.backgroundColor = 'navy';
+        background.style.backgroundColor = 'tomato';
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instantly mirror the textbox text changes to textboxes</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: tomato;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      padding: 1em;
+    }
+    label {
+      display: block;
+      font-size: 1.5em;
+    }
+    input {
+      margin: .25em;
+      padding: .25em;
+      font-size: 1.125em;
+    }
+    input[disabled] {
+      color: white;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <h1>Instantly mirror the textbox text changes to textboxes</h1>
+  <label for="username">User name</label>
+  <input type="text" id="username" name="username" placeholder="Robert" /><br />
+  <input type="text" id="mirror1" disabled /><br />
+  <input type="text" id="mirror2" disabled /><br />
+  <input type="text" id="mirror3" disabled /><br />
+  <script>
+
+    const inputObj = {
+      userName : document.getElementById('username'),
+      mirror1 : document.getElementById('mirror1'),
+      mirror2 : document.getElementById('mirror2'),
+      mirror3 : document.getElementById('mirror3')
+    }
+
+    inputObj.userName.addEventListener('keyup', function() {
+      let enterName = inputObj.userName.value;
+      inputObj.mirror1.value = mirror2.value = mirror3.value = enterName;
+    })
+  </script>
+</body>
+</html>

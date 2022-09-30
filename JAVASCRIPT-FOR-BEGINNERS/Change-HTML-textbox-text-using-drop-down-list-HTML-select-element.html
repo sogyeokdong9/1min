@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change HTML textbox text using drop-down list (HTML select element)</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: orangered;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      padding: 1em;
+    }
+    label {
+      display: block;
+      font-size: 1.5em;
+    }
+    select,
+    input {
+      margin: .25em;
+      padding: .25em;
+      font-size: 1.125em;
+    }
+    input[disabled] {
+      margin: .25em;
+      color: white;
+      border: 1px solid transparent;
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <h1>Change HTML textbox text using drop-down list (HTML select element)</h1>
+  <label for="username">Choose a user name:</label>
+  <select name="username" id="username">
+    <option value="">Choose one</option>
+    <option value="Smith">Smith</option>
+    <option value="Kane">Kane</option>
+    <option value="Tom">Tom</option>
+  </select>
+  <br />
+  <input type="text" id="mirror" disabled />
+  <script>
+    const inputObj = {
+      userName : document.getElementById('username'),
+      selectWidth : ( document.getElementById('username').clientWidth - 10 ) + 'px',
+      mirror : document.getElementById('mirror'),
+    }
+
+    inputObj.mirror.style.width = inputObj.selectWidth;
+
+    inputObj.userName.addEventListener('change', function() {
+      let chooseUserName = inputObj.userName.value;
+      inputObj.mirror.value = chooseUserName;
+    })
+  </script>
+</body>
+</html>
