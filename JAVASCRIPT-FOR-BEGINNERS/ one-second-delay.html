@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>one second delay</title>
+</head>
+<body>
+  <script>
+    console.log(0);
+    setTimeout(function() {
+      console.log(1)
+    }, 1000);  // milliseconds
+    setTimeout(myFunction, 2000);
+    function myFunction() {
+      console.log(2);
+    }
+    setTimeout(() => {
+      console.log(3);
+    }, 3000)
+    console.log(4);
+
+    // for (let index = 0; index < 60; index++) {
+    //   setTimeout(function() {
+    //   console.log(index);
+    //   }, index * 1000 );
+    // }
+  </script>
+</body>
+</html>

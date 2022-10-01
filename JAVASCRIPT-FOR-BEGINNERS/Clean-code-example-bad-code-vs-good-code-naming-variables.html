@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let t = 'Fish';
+    // t? 👎
+    let type = 'Fish';
+    // type? 👎
+    let animaltype = 'Fish'; // bad 👎
+    let animal_type = 'Fish'; // bad 👎
+    let ANIMALTYPE = 'Fish'; // bad 👎
+    let ANIMAL_TYPE = 'Fish'; // bad 👎
+    let animalType = 'Fish'; // Good: Use loverCamelCase 👍
+
+    let yB = 1982; // bad 👎
+    let yearOfBirth = 1982; // Good 👍
+
+    const pi = 3.14; // bad 👎
+    const PI = 3.14; // Good 👍
+
+    const DEFAULT_PLAYBACK_SPEED = 3.14; // Good 👍
+    const defaultPlaybackSpeed = getDefaultPalybackSpeed(usetID); // Good 👍
+
+    let pending = true; // bad 👎
+    let is_pending = true; // bad 👎
+    let isNotPending = false; // bad 👎
+    let isPending = true; // Good 👍
+  </script>
+</body>
+</html>

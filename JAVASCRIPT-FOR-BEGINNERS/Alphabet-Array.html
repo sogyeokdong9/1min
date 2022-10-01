@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphabet Array</title>
+</head>
+<body>
+  <script>
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const alphabetArray = alphabet.split('');
+    // literal
+    console.log(alphabet);
+    console.log(alphabetArray);
+    // index
+    console.log(alphabet[0]);
+    console.log(alphabetArray[0]);
+    // lindex
+    console.log(alphabet.charAt(25));
+    console.log(alphabetArray[25]);
+    // last element
+    console.log(alphabetArray.at(-1));
+    console.log(alphabet.charAt(alphabet.length - 1));
+    // length
+    console.log(alphabet.length);
+    console.log(alphabetArray.length);
+
+    let alphabetUpperCase = alphabet.toLocaleUpperCase();
+    const alphabetUpperCaseArray = alphabetUpperCase.split('');
+    
+    console.log(alphabetUpperCase);
+    console.log(alphabetUpperCaseArray);
+  </script>
+</body>
+</html>

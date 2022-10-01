@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let text = 'Hi there hi';
+    // index 012345789
+    // string  H(0)i(1)(2)t(3)h(4)e(5)r(6)e(7)(8)h(9)i(10)
+    let result;
+
+    result = text.startsWith('Hi');
+    result = text.startsWith('Hi');
+    result = text.endsWith('Hi');
+    result = text.endsWith('hi');
+    result = text.endsWith('there', 8);
+    // 8 firset character ends whit 'there'
+    result = text.includes('There');
+    result = text.includes('there');
+    result = text.charAt('0');
+    result = text.indexOf('h');
+    result = text.indexOf('hi');
+    result = text.indexOf('there');
+    result = text.lastIndexOf('h');
+    result = text.lastIndexOf('h');
+    result = text.search('there');
+    console.log(result);
+  </script>
+</body>
+</html>

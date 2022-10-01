@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to get the last word in a text in different ways</title>
+</head>
+<body>
+  <h1>How to get the last word in a text in different ways</h1>
+  <div id="target">How to get the last word in a text in different ways</div>
+  <script>
+    let lastWord = getLastWord(target.innerText);
+    console.log(lastWord);
+
+    function getLastWord(text) {
+      const words = text.split(' ');
+      console.log(words);
+      let indexOfTheLastWord = words.length - 1;
+      // index starts frome 0 1 2 ... 
+      return words[indexOfTheLastWord];
+    }
+
+    function getLastWord(text) {
+      return text.split(' ').pop();
+    }
+
+    function getLastWord(text) {
+      const array = text.split(' ');
+      return array[array.length - 1];
+    }
+
+    function getLastWord(t) {
+      return t.substring(t.lastIndexOf(' ') + 1);
+    }
+  </script>
+</body>
+</html>

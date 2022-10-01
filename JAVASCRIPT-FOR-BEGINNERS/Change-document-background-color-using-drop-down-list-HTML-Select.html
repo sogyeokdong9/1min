@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change document background color using drop-down list (HTML Select)</title>
+  <style>
+    body { text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Change document background color using drop-down list (HTML Select)</h1>
+  <label for="color">Color:</label>
+  <select id="color" name="color">
+    <option value="">Choose color</option>
+    <option value="Red">Red</option>
+    <option value="Green">Green</option>
+    <option value="Blue">Blue</option>
+  </select>
+  <script>
+    color.addEventListener('change', function(e) {
+      let chooseColor = this.value;
+      // backgruondColor
+      document.body.style.backgroundColor = chooseColor;
+      // color
+      (this.value !== '') ? document.body.style.color = 'white' : document.body.style.color = 'black';
+    })
+  </script>
+</body>
+</html>
