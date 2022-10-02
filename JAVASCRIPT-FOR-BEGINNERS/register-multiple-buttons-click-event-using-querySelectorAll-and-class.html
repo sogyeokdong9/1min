@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>register multiple buttons click event using querySelectorAll and class</title>
+</head>
+<body>
+  <h1>register multiple buttons click event using querySelectorAll and class</h1>
+  <button class="btn">button 1</button>
+  <button class="btn">button 2</button>
+  <script>
+    let buttons = document.querySelectorAll('.btn');
+    console.log(buttons);
+    for (let index = 0; index < buttons.length; index++) {
+      const element = buttons[index];
+      element.addEventListener('click', function() {
+        console.log(this, element.innerText);
+      })
+    }
+  </script>
+</body>
+</html>

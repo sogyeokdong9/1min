@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to trigger a function by clicking an HTML button?</title>
+</head>
+<body>
+  <h1>How to trigger a function by clicking an HTML button?</h1>
+  <button id="tester">test it</button>
+  <script>
+    tester.onclick = writeToConsole;
+
+    function writeToConsole() {
+      console.log(`This is it!`);
+    }
+  </script>
+</body>
+</html>
