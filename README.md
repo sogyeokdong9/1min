@@ -44,34 +44,32 @@ alert("hi there again and again");
 
 ---
 
-### Oprator & Boolean
+### Operator & Boolean
 
 #### Logical AND operator, OR operator. Booleans true and false
 
 ```js
-<script>
-  write(1 == 1);
+write(1 == 1);
 
-  // AND operator, OR operator
-  write(1 == 1 && 2 > 2);
+// AND operator, OR operator
+write(1 == 1 && 2 > 2);
 
-  // AND operator, OR operator
-  write(1 == 1 || 2 > 2);
+// AND operator, OR operator
+write(1 == 1 || 2 > 2);
 
-  write(true && false);
-  write(true || false);
+write(true && false);
+write(true || false);
 
-  write(true && true);
-  write(true || true);
+write(true && true);
+write(true || true);
 
-  write(false && false);
-  write(false || false);
+write(false && false);
+write(false || false);
 
-  function write(text) {
-    console.clear();
-    console.log(text);
-  }
-</script>
+function write(text) {
+  console.clear();
+  console.log(text);
+}
 ```
 
 ---
