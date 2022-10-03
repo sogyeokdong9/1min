@@ -33,6 +33,7 @@ let is_pending = true; // bad 👎
 let isNotPending = false; // bad 👎
 let isPending = true; // Good 👍
 ```
+---
 
 ### Writing to console, to a document and showing an alert box.
 
@@ -40,6 +41,35 @@ let isPending = true; // Good 👍
 document.write("hi there");
 console.log("hi again");
 alert("hi there again and again");
+```
+
+---
+
+### Template Literals
+
+```html
+<body>
+  <h1>Template Literals</h1>
+  <div id="userInfo"></div>
+  <script>
+    const person = {
+      name: 'Smith',
+      age: 18,
+      country: 'United States'
+    }
+
+    let info = `
+    User name is ${person.name}.
+    He is ${person.age} years old.
+    He is from ${person.country}.
+    `
+
+    userInfo.innerText = info;
+    document.body.style.backgroundColor = 'yellowGreen';
+    document.body.style.color = 'white';
+    document.body.style.textAlign = 'center';
+  </script>  
+</body>
 ```
 
 ---
@@ -145,6 +175,20 @@ let result = addTwoNumbers(1, 2);
 console.log(result);
 ```
 
+#### regular functions and arrow functions
+
+```js
+// regular function
+// let sum = function(a, b) {
+//   return a + b;
+// }
+// covert to arrow function
+let sum = (a, b) => a + b;
+
+let result = sum(2, 3);
+console.log(result);
+```
+
 ---
 
 ### Object
@@ -176,6 +220,38 @@ const values = Object.values(person);
 console.log(person);
 console.log(keys);
 console.log(values);
+```
+
+#### for...in statement
+
+```js
+const person = {
+  lastName: 'Smith',
+  firstName: 'John',
+  country: 'United States'
+}
+
+for(let property in person) {
+  console.log(person[property]);
+  console.log(`${property}: ${person[property]}`);
+}
+```
+
+#### Converting object to array and array back to object
+
+```js
+const person = {
+  lastName: 'Smith',
+  firstName: 'John'
+}
+
+// Object to Array
+const keyAndValues = Object.entries(person);
+console.log(keyAndValues);
+
+// Array to Object
+const object = Object.fromEntries(keyAndValues);
+console.log(object);
 ```
 
 ---
@@ -241,6 +317,51 @@ array.sort();
 console.log(array);
 array.reverse();
 console.log(array);
+```
+
+#### Logic of sorting an array of numbers
+
+```js
+const numbers = [1, 100, 4, 10];
+console.log(numbers);
+numbers.sort();
+console.log(numbers); // alphabetic
+
+// numeric sort
+numbers.sort(compareNumbers);
+// sort takes a functon as a parameter
+function compareNumbers(a, b) {
+  return a - b;
+}
+// or
+numbers.sort(function(a, b) {
+  return a - b;
+})
+// or use arrow function
+numbers.sort((a, b) => a - b);
+console.log(numbers);
+```
+
+#### Array forEach() Method
+
+```js
+const members = ['Smith', 'Kane', 'Tom'];
+
+members.forEach(call);
+
+function call(member) {
+  console.log(`Hey ${member}. Are you okay?`);
+}
+```
+
+### for...of statement
+
+```js
+const members = ['Smith', 'Kane', 'Tom'];
+
+for (const member of members) {
+  console.log(member);
+}
 ```
 
 ---
@@ -441,6 +562,22 @@ console.log(currentMonthName);
 </body>
 ```
 
+#### How to trigger a function by clicking an HTML button?
+
+```html
+<body>
+  <h1>How to trigger a function by clicking an HTML button?</h1>
+  <button id="tester">test it</button>
+  <script>
+    tester.onclick = writeToConsole;
+
+    function writeToConsole() {
+      console.log(`This is it!`);
+    }
+  </script>
+</body>
+```
+
 #### getElementById & addEventListener
 
 ```html
@@ -565,6 +702,42 @@ console.log(currentMonthName);
   </script>
 </body>
 ```
+
+#### how to register button click event  using querySelector and id
+
+```html
+<body>
+  <h1>how to register button click event using querySelector and id</h1>
+  <button id="myButton">my button</button>
+  <script>
+    const myButton = document.querySelector('#myButton');
+    myButton.addEventListener('click',function() {
+      console.log(`You have clicked ${myButton.innerText}`);
+    })
+  </script>
+</body>
+```
+
+#### register multiple buttons click event using querySelectorAll and class
+
+```html
+<body>
+  <h1>register multiple buttons click event using querySelectorAll and class</h1>
+  <button class="btn">button 1</button>
+  <button class="btn">button 2</button>
+  <script>
+    let buttons = document.querySelectorAll('.btn');
+    console.log(buttons);
+    for (let index = 0; index < buttons.length; index++) {
+      const element = buttons[index];
+      element.addEventListener('click', function() {
+        console.log(this, element.innerText);
+      })
+    }
+  </script>
+</body>
+```
+
 ---
 
 ## Web API
