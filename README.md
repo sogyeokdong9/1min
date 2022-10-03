@@ -33,6 +33,10 @@ let is_pending = true; // bad 👎
 let isNotPending = false; // bad 👎
 let isPending = true; // Good 👍
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+
 ---
 
 ### Writing to console, to a document and showing an alert box.
@@ -42,6 +46,10 @@ document.write("hi there");
 console.log("hi again");
 alert("hi there again and again");
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/write
+- https://developer.mozilla.org/en-US/docs/Web/API/console/log
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
 
 ---
 
@@ -71,6 +79,8 @@ alert("hi there again and again");
   </script>  
 </body>
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 ---
 
@@ -102,6 +112,12 @@ function write(text) {
 }
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Inequality
+
 ---
 
 ### Conditionals
@@ -124,6 +140,8 @@ if (score >= 90) {
 }
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+
 ---
 
 ### Looping code
@@ -139,6 +157,37 @@ for (let index = 0; index < numbers.length; index++) {
 }
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
+
+#### for...in statement
+
+```js
+const person = {
+  lastName: 'Smith',
+  firstName: 'John',
+  country: 'United States'
+}
+
+for(let property in person) {
+  console.log(person[property]);
+  console.log(`${property}: ${person[property]}`);
+}
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+
+### for...of statement
+
+```js
+const members = ['Smith', 'Kane', 'Tom'];
+
+for (const member of members) {
+  console.log(member);
+}
+```
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...of
+
 ---
 
 ### Functions
@@ -153,6 +202,9 @@ function sayHello() {
 sayHello();
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
+
 #### Function parameters
 
 ```js
@@ -162,6 +214,10 @@ function addTwoNumbers(number1, number2) {
 
 addTwoNumbers(1, 2);
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions#function_parameters
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
 #### How does a function return a value? How to use it?
 
@@ -174,6 +230,8 @@ let result = addTwoNumbers(1, 2);
 
 console.log(result);
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return
 
 #### regular functions and arrow functions
 
@@ -188,6 +246,8 @@ let sum = (a, b) => a + b;
 let result = sum(2, 3);
 console.log(result);
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 ---
 
@@ -204,6 +264,11 @@ const person = {
 
 console.log(person.lastName, person.firstName);
 ```
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
 
 #### How to get all object keys and values as an array?
 
@@ -221,21 +286,8 @@ console.log(person);
 console.log(keys);
 console.log(values);
 ```
-
-#### for...in statement
-
-```js
-const person = {
-  lastName: 'Smith',
-  firstName: 'John',
-  country: 'United States'
-}
-
-for(let property in person) {
-  console.log(person[property]);
-  console.log(`${property}: ${person[property]}`);
-}
-```
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
 
 #### Converting object to array and array back to object
 
@@ -254,6 +306,9 @@ const object = Object.fromEntries(keyAndValues);
 console.log(object);
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+
 ---
 
 ### Array
@@ -265,6 +320,10 @@ const people = ['Smith', 'Kane', 'Tom']
 
 console.log(people[0]);
 ```
+
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array
 
 #### Index of an element in an array
 
@@ -281,6 +340,8 @@ console.log(indexOfNoa);
 // -1 means not exists
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+
 #### Using splice to remove array elements
 
 ```js
@@ -293,6 +354,8 @@ console.log(numbers);
 // first number is starting index
 // secound number is the number of elements to remove
 ```
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
 #### How to sort an array of numbers?
 
 ```js
@@ -306,6 +369,8 @@ numbers.sort((a, b) => b - a);
 console.log(numbers); // ascending
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
 #### Sorting an array alphabetically ascending and descending order
 
 ```js
@@ -318,6 +383,8 @@ console.log(array);
 array.reverse();
 console.log(array);
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
 
 #### Logic of sorting an array of numbers
 
@@ -342,6 +409,8 @@ numbers.sort((a, b) => a - b);
 console.log(numbers);
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
 #### Array forEach() Method
 
 ```js
@@ -354,15 +423,7 @@ function call(member) {
 }
 ```
 
-### for...of statement
-
-```js
-const members = ['Smith', 'Kane', 'Tom'];
-
-for (const member of members) {
-  console.log(member);
-}
-```
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
 ---
 ### String
@@ -392,6 +453,10 @@ for (const member of members) {
 </body>
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
+
 #### String, startsWidth endsWith includes charAt indexOf lastIndexOf search
 
 ```js
@@ -417,6 +482,13 @@ result = text.lastIndexOf('h');
 result = text.search('there');
 console.log(result);
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
 
 #### How to get the last word in a text in different ways
 
@@ -452,6 +524,12 @@ console.log(result);
 </body>
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+
 #### Alphabet Array
 
 ```js
@@ -480,8 +558,18 @@ console.log(alphabetUpperCase);
 console.log(alphabetUpperCaseArray);
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+
 ---
+### Document
+### HTMLElement
 ### Element
+
 
 #### innerText & innerHTML. Change the text of an HTML div element
 
@@ -505,6 +593,10 @@ console.log(alphabetUpperCaseArray);
 </body>
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+
 #### Change CSS of an HTML element using Javascript
 
 ```html
@@ -522,6 +614,7 @@ console.log(alphabetUpperCaseArray);
 </body>
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
 
 ---
 
@@ -544,7 +637,13 @@ currentMonthName = date.toLocaleString('default',{month:'long'});
 console.log(currentMonthName);
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+
 ---
+
+## Web API
 
 ### Event reference
 
@@ -562,6 +661,11 @@ console.log(currentMonthName);
 </body>
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/ko/docs/conflicting/Web/API/Element/click_event
+
 #### How to trigger a function by clicking an HTML button?
 
 ```html
@@ -577,6 +681,9 @@ console.log(currentMonthName);
   </script>
 </body>
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/ko/docs/conflicting/Web/API/Element/click_event
 
 #### getElementById & addEventListener
 
@@ -594,6 +701,13 @@ console.log(currentMonthName);
   </script>
 </body>
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+
 
 #### How to toggle background color of a div using an HTML button
 
@@ -621,6 +735,12 @@ console.log(currentMonthName);
 </body>
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+
 #### Instantly mirror the textbox text changes to textboxes
 
 ```html
@@ -647,6 +767,12 @@ console.log(currentMonthName);
   </script>
 </body>
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataElement/value
 
 #### Change HTML textbox text using drop-down list (HTML select element)
 
@@ -679,6 +805,12 @@ console.log(currentMonthName);
 </body>
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataElement/value
+
 #### Change document background color using drop-down list (HTML Select)
 
 ```js
@@ -703,6 +835,13 @@ console.log(currentMonthName);
 </body>
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataElement/value
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+
 #### how to register button click event  using querySelector and id
 
 ```html
@@ -717,6 +856,11 @@ console.log(currentMonthName);
   </script>
 </body>
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
 
 #### register multiple buttons click event using querySelectorAll and class
 
@@ -737,10 +881,13 @@ console.log(currentMonthName);
   </script>
 </body>
 ```
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 
 ---
-
-## Web API
 
 ### Screen
 
@@ -751,6 +898,10 @@ let screenHeight = screen.height;
 let screenWidth = screen.width;
 console.log(screenHeight, screenWidth);
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Screen
+- https://developer.mozilla.org/en-US/docs/Web/API/Screen/height
+- https://developer.mozilla.org/en-US/docs/Web/API/Screen/width
 
 ### setTimeout()
 
@@ -776,3 +927,5 @@ console.log(4);
 //   }, index * 1000 );
 // }
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
