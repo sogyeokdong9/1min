@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>How to add a class to an HTML element using JavaScript</title>
+  <style>
+    .purple { background-color: purple; color: white; }
+  </style>
+</head>
+<body>
+	<h1>How to add a class to an HTML element using JavaScript</h1>
+	<input type="button" id="classAdder" value="add class" />
+	<script>
+		classAdder.onclick = addClass;
+
+		function addClass() {
+			document.body.classList.add('purple');
+		}
+	</script>
+</body>
+</html>

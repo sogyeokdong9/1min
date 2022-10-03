@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>console.log for multiple arguments at once</title>
+</head>
+<body>
+  <h1>console.log for multiple arguments at once</h1>
+  <script>
+		function car(make, model) {
+			this.make = make;
+			this.model = model;
+		}
+
+    const hisCar = new car('Maserati', 'A6');
+		const yourCar = new car('Audi', 'A3');
+		const myCar = new car('BMW', 'X7');
+
+    console.log(hisCar, yourCar, myCar);
+  </script>
+</body>
+</html>
