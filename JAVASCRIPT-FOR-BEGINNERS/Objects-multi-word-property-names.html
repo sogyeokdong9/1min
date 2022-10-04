@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects, multi-word property names</title>
+</head>
+<body>
+  <h1>Objects, multi-word property names</h1>
+  <script>
+    const person = {
+      lastName: 'Smith',
+      firstName: 'John',
+      'last seen': '22/2/2022'
+    }
+    console.log(person.firstName);
+    console.log(person['last seen']);
+  </script>
+</body>
+</html>

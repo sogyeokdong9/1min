@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT OBJECTS: What is property, key value pair, bracket notation and . dot notation</title>
+</head>
+<body>
+  <h1>JAVASCRIPT OBJECTS: What is property, key value pair, bracket notation and . dot notation</h1>
+  <script>
+    const country = {};
+    console.log(typeof country);
+
+    const person = {
+      lastName: 'Smith',  // a property
+      firstName: 'John',  
+      // key: value pair
+      'last seen': '22/2/2022'
+      // multi-word property name
+    }
+    // using bracket notation
+    console.log(person['last seen']);
+    // . dot notation
+    console.log(person.firstName);
+  </script>
+</body>
+</html>

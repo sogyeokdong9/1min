@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT OBJECTS: How to add property using dynamic name?</title>
+</head>
+<body>
+  <h1>JAVASCRIPT OBJECTS: How to add property using dynamic name?</h1>
+	<script>
+		const city = {
+			name: 'Seoul'
+		};
+
+		// add new property using dynamic name
+		let propertyName = 'district';
+		city[propertyName] = ['Dobong District', 'Dongdaemun District'];
+		console.log(city.district);
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript for loop (Do you really know it?)</title>
+</head>
+<body>
+  <h1>JavaScript for loop (Do you really know it?)</h1>
+  <script>
+    // 'let' is block-level scope.
+    for (var j = 0; j < 3; j++) {
+      console.log(j); // 0 1 2
+    }
+    console.log(j); // i is not defined.
+
+    // 'var' is fuction-level scope
+    for (let i = 0; i < 3; i++) {
+      console.log(i); // 0 1 2
+    }
+    console.log(i); // 3
+  </script>
+</body>
+</html>

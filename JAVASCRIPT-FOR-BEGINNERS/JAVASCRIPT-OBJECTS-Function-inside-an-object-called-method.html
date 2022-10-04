@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT OBJECTS: Function inside an object called method</title>
+</head>
+<body>
+  <h1>JAVASCRIPT OBJECTS: Function inside an object called method</h1>
+  <script>
+    const city = {
+      name: 'Seoul',
+      population: 9450768,
+      isBeautiful: true,
+      getInfo: function() {
+        return `${city.name} ${city.population}`;
+      }
+    };
+
+    console.log(city.getInfo());
+
+    // add another method
+
+    city.says = function() {
+      return `Welcome to ${this.name}`;
+    }
+
+    console.log(city.says());
+
+    // or add like this
+
+    city.says = welcome;
+
+    function welcome() {
+      return `Welcome to ${this.name}`;
+    }
+
+    console.log(city.says());
+  </script>
+</body>
+</html>
