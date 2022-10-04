@@ -4,33 +4,58 @@ It takes about a minute to complete the code...
 
 ## JavaScript
 
+### defer
+
+#### HTML script defer attribute
+
+```html
+<body>
+  <script src="defer.js" defer></script>
+  <h1>HTML script defer attribute</h1>
+  <button id="tester">test the script</button>
+  <!-- 
+    defer.js
+    <script>
+      tester.onclick = writeToConsole;
+      function writeToConsole() {
+        console.log('It works');
+      }
+    </script>
+  -->
+</body>
+```
+
+- https://developer.mozilla.org/ko/docs/Web/HTML/Element/script#attr-defer
+
+---
+
 ### Clean code
 
 #### Clean code example, bad code vs good code, naming variables
 
 ```js
 let t = 'Fish';
-// t? 👎
+// t? X
 let type = 'Fish';
-// type? 👎
-let animaltype = 'Fish'; // bad 👎
-let animal_type = 'Fish'; // bad 👎
-let ANIMALTYPE = 'Fish'; // bad 👎
-let ANIMAL_TYPE = 'Fish'; // bad 👎
+// type? X
+let animaltype = 'Fish'; // bad X
+let animal_type = 'Fish'; // bad X
+let ANIMALTYPE = 'Fish'; // bad X
+let ANIMAL_TYPE = 'Fish'; // bad X
 let animalType = 'Fish'; // Good: Use loverCamelCase 👍
 
-let yB = 1982; // bad 👎
+let yB = 1982; // bad X
 let yearOfBirth = 1982; // Good 👍
 
-const pi = 3.14; // bad 👎
+const pi = 3.14; // bad X
 const PI = 3.14; // Good 👍
 
 const DEFAULT_PLAYBACK_SPEED = 3.14; // Good 👍
 const defaultPlaybackSpeed = getDefaultPalybackSpeed(usetID); // Good 👍
 
-let pending = true; // bad 👎
-let is_pending = true; // bad 👎
-let isNotPending = false; // bad 👎
+let pending = true; // bad X
+let is_pending = true; // bad X
+let isNotPending = false; // bad X
 let isPending = true; // Good 👍
 ```
 
@@ -50,6 +75,42 @@ alert("hi there again and again");
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/write
 - https://developer.mozilla.org/en-US/docs/Web/API/console/log
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
+
+#### console.log for multiple arguments at once
+
+```js
+function car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+const hisCar = new car('Maserati', 'A6');
+const yourCar = new car('Audi', 'A3');
+const myCar = new car('BMW', 'X7');
+
+console.log(hisCar, yourCar, myCar);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/console/log
+
+#### console.dir vs console.log
+
+```js
+const array = [1, 2, 3];
+const object = {
+  name: 'Smith',
+  surname: 'Adam'
+};
+
+console.dir(array);
+console.dir(object);
+
+console.log(array);
+console.log(object);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/console/dir
+- https://developer.mozilla.org/en-US/docs/Web/API/console/log
 
 ---
 
@@ -141,6 +202,55 @@ if (score >= 90) {
 ```
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+
+#### Switch Case Example
+
+```js
+let text = 'What do you do?';
+
+console.log(text);
+
+switch (text) {
+  case 'Hello!':
+    console.log('Hi!');
+    break;
+  case 'How are you?':
+    console.log('Nice thanks');
+    break;
+  case 'What do you do?':
+    console.log('Writing codes');
+    break;
+  default:
+    console.log('I did not understand');
+    break;
+}
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+
+#### Switch Case, multiple cases
+
+```js
+let text = `How's your day?`;
+
+console.log(text);
+
+switch (text) {
+  case `How's everything?`:
+  case `How are things?`:
+  case `How's life?`:
+    console.log('not bad');
+    break;
+  case `How's your day?`:
+  case `How's your day going?`:
+    console.log(`It's going well`);
+    break;
+  default:
+    console.log('I did not understand');
+    break;
+}
+```
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch#taking_advantage_of_fall-through
 
 ---
 
@@ -253,6 +363,26 @@ console.log(result);
 
 ### Object
 
+#### Object Constructor
+
+```js
+function car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+const yourCar = new car('Audi', 'A3');
+console.log(`Your cas is ${yourCar.make} ${yourCar.model}`);
+
+const myCar = new car('BMW', 'X7');
+console.log(`Your cas is ${myCar.make} ${myCar.model}`);
+```
+
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
+
+
 #### Define and access an Object
 
 ```js
@@ -288,6 +418,47 @@ console.log(values);
 ```
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
+
+#### Object.create() Method
+
+```js
+// Object literal
+const yourCar = {
+  make: 'Audi',
+  model: 'A3',
+  fullName: function() {
+    return this.make + ' ' + this.model;
+  }
+};
+
+const myCar = Object.create(yourCar);
+      myCar.make = 'BMW';
+      myCar.model = 'X7';
+
+console.log(yourCar.fullName());
+console.log(myCar.fullName());
+```
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+
+#### Objects, dynamic property names
+
+```js
+//object literal
+const city = {
+  name: 'Seoul'
+};
+
+// access property using dynamic name
+let dynamicName = 'name';
+console.log(city[dynamicName]);
+
+// add new property using dynamic name
+let propertyName = 'district';
+city[propertyName] = ['Dobong District', 'Dongdaemun District'];
+console.log(city.district);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 
 #### Converting object to array and array back to object
 
@@ -566,57 +737,6 @@ console.log(alphabetUpperCaseArray);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
 
 ---
-### Document
-### HTMLElement
-### Element
-
-
-#### innerText & innerHTML. Change the text of an HTML div element
-
-```html
-<body>
-  <div id="div1"></div>
-  <div id="div2"></div>
-  <div id="div3"></div>
-  <div id="div4"></div>
-  <script>
-    const div1 = document.getElementById("div1");
-    const div2 = document.getElementById("div2");
-    const div3 = document.getElementById("div3");
-    const div4 = document.getElementById("div4");
-
-    div1.innerText = 'innerText';
-    div2.innerText = '<strong>innerText</strong>';
-    div3.innerHTML = 'innerHTML';
-    div4.innerHTML = '<strong>innerHTML</strong>';
-  </script>
-</body>
-```
-
-- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
-- https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
-
-#### Change CSS of an HTML element using Javascript
-
-```html
-<body>
-  <h1>Change CSS of an HTML element using Javascript</h1>
-  <div id="myDiv">This is div</div>
-  <script>
-    console.log(myDiv);
-    myDiv.style.backgroundColor = "orangered";
-    myDiv.style.padding = "1em";
-    myDiv.style.textAlign = "center";
-    document.body.style.backgroundColor = "navy";
-    document.body.style.color = "white";
-  </script>
-</body>
-```
-
-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
-
----
 
 ### Date
 
@@ -644,6 +764,79 @@ console.log(currentMonthName);
 ---
 
 ## Web API
+
+### Document & HTMLElement & Element
+
+#### innerText & innerHTML. Change the text of an HTML div element
+
+```html
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+  <div id="div4"></div>
+  <script>
+    const div1 = document.getElementById("div1");
+    const div2 = document.getElementById("div2");
+    const div3 = document.getElementById("div3");
+    const div4 = document.getElementById("div4");
+
+    div1.innerText = 'innerText';
+    div2.innerText = '<strong>innerText</strong>';
+    div3.innerHTML = 'innerHTML';
+    div4.innerHTML = '<strong>innerHTML</strong>';
+  </script>
+</body>
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+
+#### How to read and change title of an HTML document using JS?
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to read and change title of an HTML document using JS?</title>
+</head>
+<body>
+  <h1>How to read and change title of an HTML document using JS?</h1>
+  <script>
+    console.log(document.title);
+    document.title = 'Changed title';
+    console.log(document.title);
+  </script>
+</body>
+</html>
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/title
+
+#### Change CSS of an HTML element using Javascript
+
+```html
+<body>
+  <h1>Change CSS of an HTML element using Javascript</h1>
+  <div id="myDiv">This is div</div>
+  <script>
+    console.log(myDiv);
+    myDiv.style.backgroundColor = "orangered";
+    myDiv.style.padding = "1em";
+    myDiv.style.textAlign = "center";
+    document.body.style.backgroundColor = "navy";
+    document.body.style.color = "white";
+  </script>
+</body>
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+
+---
 
 ### Event reference
 
@@ -684,6 +877,40 @@ console.log(currentMonthName);
 
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
 - https://developer.mozilla.org/ko/docs/conflicting/Web/API/Element/click_event
+
+
+#### How to add a class to an HTML element using JavaScript
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to add a class to an HTML element using JavaScript</title>
+  <style>
+    .purple { background-color: purple; color: white; }
+  </style>
+</head>
+<body>
+  <h1>How to add a class to an HTML element using JavaScript</h1>
+  <input type="button" id="classAdder" value="add class" />
+  <script>
+    classAdder.onclick = addClass;
+
+    function addClass() {
+      document.body.classList.add('purple');
+    }
+  </script>
+</body>
+</html>
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/body
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 
 #### getElementById & addEventListener
 
@@ -813,7 +1040,7 @@ console.log(currentMonthName);
 
 #### Change document background color using drop-down list (HTML Select)
 
-```js
+```html
 <body>
   <h1>Change document background color using drop-down list (HTML Select)</h1>
   <label for="color">Color:</label>
@@ -902,6 +1129,8 @@ console.log(screenHeight, screenWidth);
 - https://developer.mozilla.org/en-US/docs/Web/API/Screen
 - https://developer.mozilla.org/en-US/docs/Web/API/Screen/height
 - https://developer.mozilla.org/en-US/docs/Web/API/Screen/width
+
+---
 
 ### setTimeout()
 
