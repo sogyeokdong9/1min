@@ -269,6 +269,28 @@ for (let index = 0; index < numbers.length; index++) {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
 
+#### JavaScript for loop (Do you really know it?)
+
+```js
+// 'let' is block-level scope.
+for (var j = 0; j < 3; j++) {
+  console.log(j); // 0 1 2
+}
+console.log(j); // i is not defined.
+
+// 'var' is fuction-level scope
+for (let i = 0; i < 3; i++) {
+  console.log(i); // 0 1 2
+}
+console.log(i); // 3
+```
+
+- https://developer.mozilla.org/en-US/docs/Glossary/Scope
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block#description
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#description
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#description
+
 #### for...in statement
 
 ```js
@@ -379,6 +401,7 @@ console.log(`Your cas is ${myCar.make} ${myCar.model}`);
 ```
 
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#introducing_constructors
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
 
@@ -394,11 +417,88 @@ const person = {
 
 console.log(person.lastName, person.firstName);
 ```
+
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
+
+#### JAVASCRIPT OBJECTS: Function inside an object called method
+
+```js
+const city = {
+  name: 'Seoul',
+  population: 9450768,
+  isBeautiful: true,
+  getInfo: function() {
+    return `${city.name} ${city.population}`;
+  }
+};
+
+console.log(city.getInfo());
+
+// add another method
+
+city.says = function() {
+  return `Welcome to ${this.name}`;
+}
+
+console.log(city.says());
+
+// or add like this
+
+city.says = welcome;
+
+function welcome() {
+  return `Welcome to ${this.name}`;
+}
+
+console.log(city.says());
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+
+#### JAVASCRIPT OBJECTS: What is property, key value pair, bracket notation and . dot notation
+
+```js
+const country = {};
+console.log(typeof country);
+
+const person = {
+  lastName: 'Smith',  // a property
+  firstName: 'John',  
+  // key: value pair
+  'last seen': '22/2/2022'
+  // multi-word property name
+}
+// using bracket notation
+console.log(person['last seen']);
+// . dot notation
+console.log(person.firstName);
+```
+
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors
+
+#### JAVASCRIPT OBJECTS: How to get all object values (all properties values) as an array?
+
+```js
+const person = {
+  lastName: 'Smith',
+  firstName: 'John',
+  country: 'United States'
+}
+
+const values = Object.values(person);
+
+console.log(person);
+console.log(values);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 
 #### How to get all object keys and values as an array?
 
@@ -418,6 +518,22 @@ console.log(values);
 ```
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
+
+#### Objects, multi-word property names
+
+```js
+const person = {
+  lastName: 'Smith',
+  firstName: 'John',
+  'last seen': '22/2/2022'
+}
+console.log(person.firstName);
+console.log(person['last seen']);
+```
+
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 
 #### Object.create() Method
 
@@ -440,6 +556,54 @@ console.log(myCar.fullName());
 ```
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 
+#### How to add new property and how to change a value
+
+```js
+const person = {
+  name: 'Smith'
+}
+console.log(person);
+
+// add new property
+person.birthYear = 2022;
+console.log(person);
+
+// change value
+person.birthYear = 2021;
+console.log(person);
+```
+
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+
+#### JAVASCRIPT OBJECTS: How to access property using dynamic name?
+
+```js
+const city = {
+name: 'Seoul'
+};
+
+let dynamicName = 'name';
+console.log(city[dynamicName]);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
+
+#### JAVASCRIPT OBJECTS: How to add property using dynamic name?
+
+```js
+const city = {
+name: 'Seoul'
+};
+
+// add new property using dynamic name
+let propertyName = 'district';
+city[propertyName] = ['Dobong District', 'Dongdaemun District'];
+console.log(city.district);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
+
+
 #### Objects, dynamic property names
 
 ```js
@@ -460,6 +624,22 @@ console.log(city.district);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 
+#### How to iterate over object properties
+
+```js
+const person = {
+  lastName: 'Smith',
+  firstName: 'John',  
+  age: 28
+}
+
+for (const property in person) {
+  console.log(property + ': ' + person[property]);
+}
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+
 #### Converting object to array and array back to object
 
 ```js
@@ -479,6 +659,24 @@ console.log(object);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+
+#### JAVASCRIPT OBJECTS: How to remove a property from an object
+
+```js
+const person = {
+  lastName: 'Smith',
+  firstName: 'John',  
+  'last seen': '22/2/2022'
+}
+// using bracket notation
+delete person['last seen'];
+// . dot notation
+delete person.lastName;
+
+console.log(person);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
 
 ---
 
