@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT OBJECTS: Destructuring</title>
+</head>
+<body>
+  <h1>JAVASCRIPT OBJECTS: Destructuring</h1>
+  <script>
+    const place = {
+      province: "Rize",
+      elevation: "6m"
+    }
+
+    const province1 = place.province;
+    const elevation1 = place.elevation;
+    console.log(province1);
+    console.log(province1, elevation1);
+
+    // Using destructuring
+    const { province, elevation } = place;
+    console.log(province);
+    console.log(province, elevation);
+  </script>
+</body>
+</html>

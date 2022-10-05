@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT OBJECTS: Converting a string to object</title>
+</head>
+<body>
+  <h1>JAVASCRIPT OBJECTS: Converting a string to object</h1>
+  <script>
+    let rival = '{"name:":"Hun","pts":63}';
+    console.log(typeof rival);
+    console.log(rival);
+
+    // type conversion to object
+    rival = JSON.parse(rival);
+    console.log(typeof rival);
+    console.log(rival);
+
+    // back to string
+    rival = JSON.stringify(rival);
+    console.log(typeof rival);
+    console.log(rival);
+  </script>
+</body>
+</html>

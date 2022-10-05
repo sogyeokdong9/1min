@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT OBJECTS: Checking if a property exists</title>
+</head>
+<body>
+  <h1>JAVASCRIPT OBJECTS: Checking if a property exists</h1>
+  <script>
+    const place = {
+      province: "Rize",
+      elevation: "6m"
+    }
+
+    // check if a propety exists
+    let isExists = "elevation" in place;
+    console.log(isExists);
+    isExists = "population" in place;
+    console.log(isExists);
+  </script>
+</body>
+</html>
