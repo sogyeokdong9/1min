@@ -385,6 +385,29 @@ console.log(result);
 
 ### Object
 
+#### JAVASCRIPT OBJECTS: Clean Code, Bad Code vs Good Code
+
+```js
+// bad code ❌
+let person1 = {
+  personName: "Adam",
+  personSurname: "Bucan"
+}
+// good code 👍
+// use const
+const person2 = {
+  name: "Adam",
+  surname: "Bucan"
+};  // use; at the end
+
+console.log(person1.personName);  // bad
+console.log(person2.name);  // 👍
+```
+
+- https://developer.mozilla.org/en-US/docs/MDN
+- https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide
+- https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript
+
 #### Object Constructor
 
 ```js
@@ -405,7 +428,6 @@ console.log(`Your cas is ${myCar.make} ${myCar.model}`);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
 
-
 #### Define and access an Object
 
 ```js
@@ -423,6 +445,25 @@ console.log(person.lastName, person.firstName);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
+
+
+#### JAVASCRIPT OBJECTS: Using 'this' keyword
+
+```js
+let name = 'Bulent';
+const man = {
+  name: "Adma",
+  returnName: function() {
+    return name + ' ' + this.name;
+  }
+};
+
+console.log(man.returnName());
+```
+
+- https://developer.mozilla.org/en-US/docs/Glossary/Scope
+- https://developer.mozilla.org/en-US/docs/Glossary/Global_scope
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 
 #### JAVASCRIPT OBJECTS: Function inside an object called method
 
@@ -483,6 +524,42 @@ console.log(person.firstName);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors
 
+#### JAVASCRIPT OBJECTS: An array of objects
+
+```js
+const scorers = [
+  { name: "Harry Kane", goals: 12},
+  { name: "Mohammed Salah", goals: 20},
+  { name: "Diogo Jota", goals: 14},
+  { name: "Cristiano Ronaldo", goals: 12},
+  { name: "Son Heung-min", goals: 14},
+]
+
+console.table(scorers);
+console.clear();
+console.log(scorers[0].name);
+console.log(scorers[0].goals);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/console/table
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections
+
+#### JAVASCRIPT OBJECTS: How to get all object keys (all properties keys) as an array?
+
+```js
+const employee = {
+  name: 'Smith',
+  surname: 'Adam'
+};
+const keys = Object.keys(employee);
+
+console.log(keys);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+
+
 #### JAVASCRIPT OBJECTS: How to get all object values (all properties values) as an array?
 
 ```js
@@ -498,7 +575,7 @@ console.log(person);
 console.log(values);
 ```
 
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
 
 #### How to get all object keys and values as an array?
 
@@ -518,6 +595,38 @@ console.log(values);
 ```
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
+
+#### JAVASCRIPT OBJECTS: How to get number of properties in an object
+
+```js
+const employee = {
+  name: 'Smith',
+  surname: 'Adam'
+};
+let length = Object.keys(employee).length;
+
+console.log(length);
+```
+
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+
+#### JAVASCRIPT OBJECTS: Object inside an object
+
+```js
+const team = {
+  name: "Liverpool",
+  points: 54,
+  player: {
+    name: "Muhammed Salah",
+    goals: 16
+  }
+};
+
+console.log(team.player.name);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
 
 #### Objects, multi-word property names
 
@@ -575,6 +684,23 @@ console.log(person);
 
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
 
+#### JAVASCRIPT OBJECTS: Checking if a property exists
+
+```js
+const place = {
+  province: "Rize",
+  elevation: "6m"
+}
+
+// check if a propety exists
+let isExists = "elevation" in place;
+console.log(isExists);
+isExists = "population" in place;
+console.log(isExists);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
+
 #### JAVASCRIPT OBJECTS: How to access property using dynamic name?
 
 ```js
@@ -624,6 +750,27 @@ console.log(city.district);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 
+#### JAVASCRIPT OBJECTS: Destructuring
+
+```js
+const place = {
+  province: "Rize",
+  elevation: "6m"
+}
+
+const province1 = place.province;
+const elevation1 = place.elevation;
+console.log(province1);
+console.log(province1, elevation1);
+
+// Using destructuring
+const { province, elevation } = place;
+console.log(province);
+console.log(province, elevation);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
 #### How to iterate over object properties
 
 ```js
@@ -639,6 +786,24 @@ for (const property in person) {
 ```
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+
+#### JAVASCRIPT OBJECTS: Filtering an array of objects by property value
+
+```js
+const scorers = [
+  { name: "Harry Kane", goals: 12},
+  { name: "Mohammed Salah", goals: 20},
+  { name: "Diogo Jota", goals: 14},
+  { name: "Cristiano Ronaldo", goals: 12},
+  { name: "Son Heung-min", goals: 14},
+]
+
+const filteredScorers = scorers.filter( s => s.goals > 12);
+
+console.table(filteredScorers);
+```
+
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
 #### Converting object to array and array back to object
 
@@ -659,6 +824,27 @@ console.log(object);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+
+#### JAVASCRIPT OBJECTS: Converting a string to object
+
+```js
+let rival = '{"name:":"Hun","pts":63}';
+console.log(typeof rival);
+console.log(rival);
+
+// type conversion to object
+rival = JSON.parse(rival);
+console.log(typeof rival);
+console.log(rival);
+
+// back to string
+rival = JSON.stringify(rival);
+console.log(typeof rival);
+console.log(rival);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 
 #### JAVASCRIPT OBJECTS: How to remove a property from an object
 
