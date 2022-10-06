@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript, populate dropdown list (HTML Select) with an array of objects</title>
+</head>
+<body>
+  <h1>Javascript, populate dropdown list (HTML Select) with an array of objects</h1>
+  <div>
+    <select name="slctScorers" id="slctScorers">
+      <option value="">Choose One</option>
+    </select>
+    <div id="result"></div>
+  </div>
+  <script>
+    const scorers = [
+      { name: "Mohammed Salah", goals: 20},
+      { name: "Son Heung-min", goals: 17},
+      { name: "Diogo Jota", goals: 15}
+    ]
+
+    scorers.forEach( (scorer) => {
+      let o = document.createElement("option");
+      o.text = scorer.name;
+      o.value = scorer.goals;
+      slctScorers.appendChild(o);
+    });
+
+    slctScorers.onchange = function() {
+      result.innerText = slctScorers.value ? slctScorers.value + " goals" : null;
+    }
+  </script>
+</body>
+</html>

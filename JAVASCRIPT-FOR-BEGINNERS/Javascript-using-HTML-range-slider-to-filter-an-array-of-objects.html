@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript, using HTML range slider to filter an array of objects</title>
+</head>
+<body>
+  <h1>Javascript, using HTML range slider to filter an array of objects</h1>
+  <label for="">Minimum Goals</label>
+  <input type="range" min="10" max="20" value="10" oninput="filter(this)">
+  <output>10</output>
+  <script>
+    const scorers = [
+      { name: "Harry Kane", goals: 12},
+      { name: "Mohammed Salah", goals: 20},
+      { name: "Diogo Jota", goals: 14},
+      { name: "Cristiano Ronaldo", goals: 12},
+      { name: "Son Heung-min", goals: 14},
+    ]
+
+    console.log(scorers);
+
+    function filter(e) {
+      console.log(e);
+      e.nextElementSibling.value = e.value;
+      console.log(e.value);
+      const filterdScorers = scorers.filter( s => s.goals >= e.value );
+      console.clear();
+      console.table(filterdScorers);
+    }
+  </script>
+</body>
+</html>

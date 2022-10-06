@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT OBJECTS: How to copy an object?</title>
+</head>
+<body>
+  <h1>JAVASCRIPT OBJECTS: How to copy an object?</h1>
+  <script>
+    const firstObject = {
+      name: "Adam",
+      surname: "Smith"
+    }
+
+    // bad one ❌
+    const secondObject = firstObject;
+
+    // because
+    secondObject.name = "Bulent";
+
+    console.log(firstObject.name);
+    console.log(secondObject.name);
+    console.clear();
+
+    // good one 👍
+    thirdObject = { ...firstObject };
+    thirdObject.name = "Park";
+
+    console.log(firstObject.name);
+    console.log(thirdObject.name);
+  </script>
+</body>
+</html>

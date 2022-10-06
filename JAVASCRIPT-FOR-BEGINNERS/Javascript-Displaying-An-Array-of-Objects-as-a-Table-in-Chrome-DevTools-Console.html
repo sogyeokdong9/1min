@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript, Displaying An Array of Objects as a Table in Chrome DevTools Console</title>
+</head>
+<body>
+  <h1>Javascript, Displaying An Array of Objects as a Table in Chrome DevTools Console</h1>
+  <script>
+    const teams = [
+      {
+        "Club" : "Man City",
+        "Matches Played" : 29,
+        "Goal Difference" : 50,
+        "Points" : 70
+      },
+      {
+        "Club" : "Liverpool",
+        "Matches Played" : 29,
+        "Goal Difference" : 55,
+        "Points" : 69
+      },
+      {
+        "Club" : "Man City",
+        "Matches Played" : 29,
+        "Goal Difference" : 50,
+        "Points" : 70
+      },
+      {
+        "Club" : "Chelsea",
+        "Matches Played" : 28,
+        "Goal Difference" : 38,
+        "Points" : 59
+      },
+      {
+        "Club" : "Arsenal",
+        "Matches Played" : 28,
+        "Goal Difference" : 13,
+        "Points" : 54
+      },
+      {
+        "Club" : "Tottenham",
+        "Matches Played" : 29,
+        "Goal Difference" : 11,
+        "Points" : 51
+      }
+    ];
+
+    console.table(teams);
+    console.clear();
+    console.log(teams[0]["Matches Played"]);
+    console.log(teams[0].Club);
+  </script>
+</body>
+</html>

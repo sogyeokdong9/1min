@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript objects, how to check if a property exists</title>
+</head>
+<body>
+  <h1>JavaScript objects, how to check if a property exists</h1>
+  <script>
+    const person = {
+      name: "Adam",
+      eats: "fried potatoes"
+    };
+
+    console.log(person);
+
+    let isExists = 'eats' in person;
+
+    console.log(isExists);
+
+    if (isExists) {
+      delete person.eats;
+    }
+
+    console.log(person);
+  </script>
+</body>
+</html>

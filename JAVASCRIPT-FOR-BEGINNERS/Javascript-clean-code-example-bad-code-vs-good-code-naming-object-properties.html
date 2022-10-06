@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript, clean code example, bad code vs good code, naming object properties</title>
+</head>
+<body>
+  <h1>Javascript, clean code example, bad code vs good code, naming object properties</h1>
+  <script>
+    // ❌ Javascript bad code
+
+    const person1 = {
+      personName: "Anthony",
+      personSurname: "Quinn",
+      personBirthday: 1915
+    }
+
+    // 👍 good code
+
+    const person2 = {
+      name: "Anthony",
+      surname: "Quinn",
+      birthday: 1915
+    }
+
+    console.log(person1.personName);  // X bad
+    console.log(person1.personSurname);  // X bad
+    console.log(person2.name);  // 👍 good
+    console.log(person2.surname);  // 👍 good
+  </script>
+</body>
+</html>
