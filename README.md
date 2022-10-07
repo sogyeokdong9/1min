@@ -112,6 +112,59 @@ console.log(object);
 - https://developer.mozilla.org/en-US/docs/Web/API/console/dir
 - https://developer.mozilla.org/en-US/docs/Web/API/console/log
 
+#### Javascript, Displaying An Array of Objects as a Table in Chrome DevTools Console
+
+```js
+const teams = [
+  {
+    "Club" : "Man City",
+    "Matches Played" : 29,
+    "Goal Difference" : 50,
+    "Points" : 70
+  },
+  {
+    "Club" : "Liverpool",
+    "Matches Played" : 29,
+    "Goal Difference" : 55,
+    "Points" : 69
+  },
+  {
+    "Club" : "Man City",
+    "Matches Played" : 29,
+    "Goal Difference" : 50,
+    "Points" : 70
+  },
+  {
+    "Club" : "Chelsea",
+    "Matches Played" : 28,
+    "Goal Difference" : 38,
+    "Points" : 59
+  },
+  {
+    "Club" : "Arsenal",
+    "Matches Played" : 28,
+    "Goal Difference" : 13,
+    "Points" : 54
+  },
+  {
+    "Club" : "Tottenham",
+    "Matches Played" : 29,
+    "Goal Difference" : 11,
+    "Points" : 51
+  }
+];
+
+console.table(teams);
+console.clear();
+console.log(teams[0]["Matches Played"]);
+console.log(teams[0].Club);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/console
+- https://developer.mozilla.org/en-US/docs/Web/API/console/clear
+- https://developer.mozilla.org/en-US/docs/Web/API/console/log
+- https://developer.mozilla.org/en-US/docs/Web/API/console/table
+
 ---
 
 ### Template Literals
@@ -408,6 +461,46 @@ console.log(person2.name);  // 👍
 - https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide
 - https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript
 
+#### Javascript, clean code example, bad code vs good code, naming object properties
+
+```js
+// ❌ Javascript bad code
+
+const person1 = {
+  personName: "Anthony",
+  personSurname: "Quinn",
+  personBirthday: 1915
+}
+
+// 👍 good code
+
+const person2 = {
+  name: "Anthony",
+  surname: "Quinn",
+  birthday: 1915
+}
+
+console.log(person1.personName);  // X bad
+console.log(person1.personSurname);  // X bad
+console.log(person2.name);  // 👍 good
+console.log(person2.surname);  // 👍 good
+```
+
+- https://developer.mozilla.org/en-US/docs/MDN
+- https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide
+- https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript
+
+#### Javascript challenge; first to know wins. Subject: Objects equality
+
+```js
+const a = {};
+const b = {};
+
+console.log(a == b); // The output is ... ...
+```
+
+- https://stackoverflow.com/questions/28599976/why-is-false-in-javascript
+
 #### Object Constructor
 
 ```js
@@ -701,6 +794,51 @@ console.log(isExists);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
 
+#### JavaScript objects, how to check if a property exists
+
+```js
+const person = {
+  name: "Adam",
+  eats: "fried potatoes"
+};
+
+console.log(person);
+
+let isExists = 'eats' in person;
+
+console.log(isExists);
+
+if (isExists) {
+  delete person.eats;
+}
+
+console.log(person);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+
+#### JavaScript objects: how to add, remove a property
+
+```js
+const person = {};
+
+console.log(typeof person);
+console.log(person);
+
+person.name = 'Adam';
+person.surname = 'Smith';
+
+console.log(person);
+
+delete person.surname;
+
+console.log(person);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+
 #### JAVASCRIPT OBJECTS: How to access property using dynamic name?
 
 ```js
@@ -805,6 +943,25 @@ console.table(filteredScorers);
 
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
+#### JAVASCRIPT OBJECTS: Sorting an array of objects by property value
+
+```js
+const scorers = [
+  { name: "Harry Kane", goals: 12},
+  { name: "Mohammed Salah", goals: 20},
+  { name: "Diogo Jota", goals: 14},
+  { name: "Cristiano Ronaldo", goals: 12},
+  { name: "Son Heung-min", goals: 14},
+]
+
+scorers.sort( (s1, s2) => s2.goals - s1.goals );
+
+console.table(scorers);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+- https://developer.mozilla.org/en-US/docs/Web/API/console/table
+
 #### Converting object to array and array back to object
 
 ```js
@@ -863,6 +1020,108 @@ console.log(person);
 ```
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+
+#### JAVASCRIPT OBJECTS: How to copy an object?
+
+```js
+const firstObject = {
+  name: "Adam",
+  surname: "Smith"
+}
+
+// bad one ❌
+const secondObject = firstObject;
+
+// because
+secondObject.name = "Bulent";
+
+console.log(firstObject.name);
+console.log(secondObject.name);
+console.clear();
+
+// good one 👍
+thirdObject = { ...firstObject };
+thirdObject.name = "Park";
+
+console.log(firstObject.name);
+console.log(thirdObject.name);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+#### Javascript, using HTML range slider to filter an array of objects
+
+```html
+<body>
+  <h1>Javascript, using HTML range slider to filter an array of objects</h1>
+  <label for="">Minimum Goals</label>
+  <input type="range" min="10" max="20" value="10" oninput="filter(this)">
+  <output>10</output>
+  <script>
+    const scorers = [
+      { name: "Harry Kane", goals: 12},
+      { name: "Mohammed Salah", goals: 20},
+      { name: "Diogo Jota", goals: 14},
+      { name: "Cristiano Ronaldo", goals: 12},
+      { name: "Son Heung-min", goals: 14},
+    ]
+
+    console.log(scorers);
+
+    function filter(e) {
+      console.log(e);
+      e.nextElementSibling.value = e.value;
+      console.log(e.value);
+      const filterdScorers = scorers.filter( s => s.goals >= e.value );
+      console.clear();
+      console.table(filterdScorers);
+    }
+  </script>
+</body>
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/nextElementSibling
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+#### Javascript, populate dropdown list (HTML Select) with an array of objects
+
+```html
+<body>
+  <h1>Javascript, populate dropdown list (HTML Select) with an array of objects</h1>
+  <div>
+    <select name="slctScorers" id="slctScorers">
+      <option value="">Choose One</option>
+    </select>
+    <div id="result"></div>
+  </div>
+  <script>
+    const scorers = [
+      { name: "Mohammed Salah", goals: 20},
+      { name: "Son Heung-min", goals: 17},
+      { name: "Diogo Jota", goals: 15}
+    ]
+
+    scorers.forEach( (scorer) => {
+      let o = document.createElement("option");
+      o.text = scorer.name;
+      o.value = scorer.goals;
+      slctScorers.appendChild(o);
+    });
+
+    slctScorers.onchange = function() {
+      result.innerText = slctScorers.value ? slctScorers.value + " goals" : null;
+    }
+  </script>
+</body>
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+- https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+- ddddddd
 
 ---
 
