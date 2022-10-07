@@ -1121,7 +1121,6 @@ console.log(thirdObject.name);
 - https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
-- ddddddd
 
 ---
 
