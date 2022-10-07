@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript: Using $ instead of querySelector()</title>
+</head>
+<body>
+  <h1>JavaScript: Using $ instead of querySelector()</h1>
+  <button id="btn">Click to test</button>
+  <span id="spn"></span>
+  <script>
+    let btn = document.querySelector('#btn');
+    let spn = document.querySelector('#spn');
+
+    btn.onclick = changeSpan;
+
+    function changeSpan() {
+      spn.innerText = `It works`;
+    }
+
+    // same thing using $
+    const $ = (element) => document.querySelector(element);
+
+    $('#btn').onclick = changeSpan;
+
+    function changeSpan() {
+      $('#spn').innerText = 'This works as well';
+    }
+
+    // or do it like this
+    const A = document.querySelector.bind(document);
+
+    A('#btn').onclick = function() {
+      A('#spn').innerText = 'Yes, works.';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript array forEach() method example: Find the occurrence of an element in an array</title>
+</head>
+<body>
+  <h1>JavaScript array forEach() method example: Find the occurrence of an element in an array</h1>
+  <input type="text" id="inputText" />
+  <input type="button" id="btn" value="Count" />
+  <span id="result"></span>
+
+  <script>
+    const array = ['Adam', 'Eve', 'Adam'];
+
+    btn.onclick = findOccurance;
+
+    function findOccurance() {
+      let count = 0;
+      array.forEach( function(element) {
+        if (inputText.value == element) {
+          count++;
+        }
+      });
+      result.innerText = 'Count: ' + count;
+    }
+  </script>
+</body>
+</html>

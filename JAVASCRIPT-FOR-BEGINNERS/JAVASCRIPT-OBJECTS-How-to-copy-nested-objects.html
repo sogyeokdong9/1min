@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT OBJECTS: How to copy nested objects</title>
+</head>
+<body>
+  <h1>JAVASCRIPT OBJECTS: How to copy nested objects</h1>
+  <script>
+    const person = {
+      name: 'Adam',
+      surname: 'Smith',
+      child: {
+        name: 'Julia'
+      }
+    };
+
+    // using ...spread operator
+    const woman = { ...person };
+    woman.child.name = 'Maria';
+
+    console.log(person.child.name);
+    console.log(woman.child.name);
+
+    // but, I changed only woman's child
+    let personAsString = JSON.stringify(person);  //toString
+    const adam = JSON.parse(personAsString);
+    person.child.name = 'Julia'
+
+    console.log(adam.child.name);
+    console.log(woman.child.name);
+  </script>
+</body>
+</html>
