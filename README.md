@@ -64,7 +64,9 @@ let isPending = true; // Good 👍
 
 ---
 
-### Writing to console, to a document and showing an alert box.
+### Output
+
+#### Writing to console, to a document and showing an alert box.
 
 ```js
 document.write("hi there");
@@ -1050,6 +1052,40 @@ console.log(thirdObject.name);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 
+#### JAVASCRIPT OBJECTS: How to copy nested objects
+
+```js
+const person = {
+  name: 'Adam',
+  surname: 'Smith',
+  child: {
+    name: 'Julia'
+  }
+};
+
+// using ...spread operator
+const woman = { ...person };
+woman.child.name = 'Maria';
+
+console.log(person.child.name);
+console.log(woman.child.name);
+
+// but, I changed only woman's child
+let personAsString = JSON.stringify(person);  //toString
+const adam = JSON.parse(personAsString); //toObject
+person.child.name = 'Julia'
+
+console.log(adam.child.name);
+console.log(woman.child.name);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+
 #### Javascript, using HTML range slider to filter an array of objects
 
 ```html
@@ -1238,6 +1274,47 @@ function call(member) {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
+#### JavaScript Arrays: How to flatten an array using flat() method?
+
+```js
+const array1 = [1, 2, [3]];
+console.log(array1);
+
+const array2 = array1.flat();
+console.log(array2);  // good 👍
+
+console.clear();
+
+const array3 = [1, [2, [3]]];
+console.log(array3);
+
+const array4 = array3.flat();
+console.log(array4); // bad;
+
+const array5 = array3.flat(2);
+console.log(array5);  // good 👍
+
+console.clear();
+
+const array6 = [1, [2, [3, [4]]]];
+console.log(array6);
+
+const array7 = array6.flat(Infinity);
+console.log(array7);
+
+console.clear();
+
+// remove empty slots using flat()
+
+const array8 = [1, 2, , 3];
+console.log(array8);
+
+const array9 = array8.flat();
+console.log(array9);  // good 👍
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+
 ---
 ### String
 
@@ -1377,6 +1454,24 @@ console.log(alphabetUpperCaseArray);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+
+#### How do you trim whitespaces from a string in JavaScript?
+
+```js
+let mushroom = '      🍄      ';
+let _ = '🍓';
+
+console.log(_ + mushroom + _);
+console.log(_ + mushroom.trim() + _);
+console.log(_ + mushroom.trimEnd() + _);
+console.log(_ + mushroom.trimRight() + _);
+console.log(_ + mushroom.trimLeft() + _);
+console.log(_ + mushroom.trimStart() + _);
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart
 
 ---
 
@@ -1518,8 +1613,8 @@ console.log(currentMonthName);
 ```
 
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Notification/click_event
 - https://developer.mozilla.org/ko/docs/conflicting/Web/API/Element/click_event
-
 
 #### How to add a class to an HTML element using JavaScript
 
@@ -1576,7 +1671,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
-
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/toggle_event
 
 #### How to toggle background color of a div using an HTML button
 
@@ -1609,6 +1704,47 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+
+#### JavaScript: Using $ instead of querySelector()
+
+```html
+<body>
+  <h1>JavaScript: Using $ instead of querySelector()</h1>
+  <button id="btn">Click to test</button>
+  <span id="spn"></span>
+  <script>
+    let btn = document.querySelector('#btn');
+    let spn = document.querySelector('#spn');
+
+    btn.onclick = changeSpan;
+
+    function changeSpan() {
+      spn.innerText = `It works`;
+    }
+
+    // same thing using $
+    const $ = (element) => document.querySelector(element);
+
+    $('#btn').onclick = changeSpan;
+
+    function changeSpan() {
+      $('#spn').innerText = 'This works as well';
+    }
+
+    // or do it like this
+    const A = document.querySelector.bind(document);
+
+    A('#btn').onclick = function() {
+      A('#spn').innerText = 'Yes, works.';
+    }
+  </script>
+</body>
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Locating_DOM_elements_using_selectors
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 
 #### Instantly mirror the textbox text changes to textboxes
 
@@ -1710,6 +1846,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataElement/value
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 
 #### how to register button click event  using querySelector and id
 
@@ -1756,6 +1893,35 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 
+#### JavaScript array forEach() method example: Find the occurrence of an element in an array
+
+```html
+<body>
+  <h1>JavaScript array forEach() method example: Find the occurrence of an element in an array</h1>
+  <input type="text" id="inputText" />
+  <input type="button" id="btn" value="Count" />
+  <span id="result"></span>
+
+  <script>
+    const array = ['Adam', 'Eve', 'Adam'];
+
+    btn.onclick = findOccurance;
+
+    function findOccurance() {
+      let count = 0;
+      array.forEach( function(element) {
+        if (inputText.value == element) {
+          count++;
+        }
+      });
+      result.innerText = 'Count: ' + count;
+    }
+  </script>
+</body>
+```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
 ---
 
 ### Screen
@@ -1800,3 +1966,55 @@ console.log(4);
 ```
 
 - https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous
+
+---
+
+## Reference
+
+### Google Spreadsheet(1~44)
+
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+- https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide
+- https://developer.mozilla.org/en-US/docs/Web/API/console/log
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/title
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
+- https://developer.mozilla.org/en-US/docs/Web/API/Event/type
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement
+- https://developer.mozilla.org/en-US/docs/Web/API/Notification/click_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Screen
+- https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#function_parameters
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
