@@ -6,7 +6,7 @@ It takes about a minute to complete the code...
 
 ### defer
 
-#### HTML script defer attribute
+#### 🥳 HTML script defer attribute
 
 ```html
 <body>
@@ -31,7 +31,7 @@ It takes about a minute to complete the code...
 
 ### Clean code
 
-#### Clean code example, bad code vs good code, naming variables
+#### 🤘🏻 Clean code example, bad code vs good code, naming variables
 
 ```js
 let t = 'Fish';
@@ -66,7 +66,7 @@ let isPending = true; // Good 👍
 
 ### Output
 
-#### Writing to console, to a document and showing an alert box.
+#### 🥳 Writing to console, to a document and showing an alert box.
 
 ```js
 document.write("hi there");
@@ -78,7 +78,7 @@ alert("hi there again and again");
 - https://developer.mozilla.org/en-US/docs/Web/API/console/log
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
 
-#### console.log for multiple arguments at once
+#### 🥳 console.log for multiple arguments at once
 
 ```js
 function car(make, model) {
@@ -94,8 +94,10 @@ console.log(hisCar, yourCar, myCar);
 ```
 
 - https://developer.mozilla.org/en-US/docs/Web/API/console/log
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
 
-#### console.dir vs console.log
+#### 🥳 console.dir vs console.log
 
 ```js
 const array = [1, 2, 3];
@@ -114,7 +116,7 @@ console.log(object);
 - https://developer.mozilla.org/en-US/docs/Web/API/console/dir
 - https://developer.mozilla.org/en-US/docs/Web/API/console/log
 
-#### Javascript, Displaying An Array of Objects as a Table in Chrome DevTools Console
+#### 🥳 Javascript, Displaying An Array of Objects as a Table in Chrome DevTools Console
 
 ```js
 const teams = [
@@ -166,10 +168,11 @@ console.log(teams[0].Club);
 - https://developer.mozilla.org/en-US/docs/Web/API/console/clear
 - https://developer.mozilla.org/en-US/docs/Web/API/console/log
 - https://developer.mozilla.org/en-US/docs/Web/API/console/table
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors
 
 ---
 
-### Template Literals
+### 🥳 Template Literals
 
 ```html
 <body>
@@ -202,7 +205,7 @@ console.log(teams[0].Club);
 
 ### Operator & Boolean
 
-#### Logical AND operator, OR operator. Booleans true and false
+#### 🥳 Logical AND operator, OR operator. Booleans true and false
 
 ```js
 write(1 == 1);
@@ -238,7 +241,7 @@ function write(text) {
 
 ### Conditionals
 
-#### Conditional statements if, else if, else
+#### 🥳 Conditional statements if, else if, else
 
 ```js
 let score = 59;
@@ -258,7 +261,7 @@ if (score >= 90) {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
 
-#### Switch Case Example
+#### 🥳 Switch Case Example
 
 ```js
 let text = 'What do you do?';
@@ -283,7 +286,7 @@ switch (text) {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
 
-#### Switch Case, multiple cases
+#### 🥳 Switch Case, multiple cases
 
 ```js
 let text = `How's your day?`;
@@ -311,7 +314,7 @@ switch (text) {
 
 ### Looping code
 
-#### For loop
+#### 🥳 For loop
 
 ```js
 const numbers = [10, 20, 30];
@@ -324,7 +327,7 @@ for (let index = 0; index < numbers.length; index++) {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
 
-#### JavaScript for loop (Do you really know it?)
+#### 🥳 JavaScript for loop (Do you really know it?)
 
 ```js
 // 'let' is block-level scope.
@@ -363,7 +366,7 @@ for(let property in person) {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 
-### for...of statement
+### 🥳 for...of statement
 
 ```js
 const members = ['Smith', 'Kane', 'Tom'];
@@ -379,7 +382,7 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...
 
 ### Functions
 
-#### How to declare a function and how to invoke it?
+#### 🥳 How to declare a function and how to invoke it?
 
 ```js
 function sayHello() {
@@ -392,7 +395,7 @@ sayHello();
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 
-#### Function parameters
+#### 🥳 Function parameters
 
 ```js
 function addTwoNumbers(number1, number2) {
@@ -406,7 +409,7 @@ addTwoNumbers(1, 2);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
-#### How does a function return a value? How to use it?
+#### 🥳 How does a function return a value? How to use it?
 
 ```js
 function addTwoNumbers(number1, number2) {
@@ -420,7 +423,7 @@ console.log(result);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return
 
-#### regular functions and arrow functions
+#### 🥳 regular functions and arrow functions
 
 ```js
 // regular function
@@ -440,7 +443,7 @@ console.log(result);
 
 ### Object
 
-#### JAVASCRIPT OBJECTS: Clean Code, Bad Code vs Good Code
+#### 🤘🏻 JAVASCRIPT OBJECTS: Clean Code, Bad Code vs Good Code
 
 ```js
 // bad code ❌
@@ -463,7 +466,7 @@ console.log(person2.name);  // 👍
 - https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide
 - https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript
 
-#### Javascript, clean code example, bad code vs good code, naming object properties
+#### 🤘🏻 Javascript, clean code example, bad code vs good code, naming object properties
 
 ```js
 // ❌ Javascript bad code
@@ -523,7 +526,7 @@ console.log(`Your cas is ${myCar.make} ${myCar.model}`);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
 
-#### Define and access an Object
+#### 🥳 Define and access an Object
 
 ```js
 const person = {
@@ -559,6 +562,8 @@ console.log(man.returnName());
 - https://developer.mozilla.org/en-US/docs/Glossary/Scope
 - https://developer.mozilla.org/en-US/docs/Glossary/Global_scope
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#lexical_scoping
 
 #### JAVASCRIPT OBJECTS: Function inside an object called method
 
@@ -596,7 +601,7 @@ console.log(city.says());
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 
-#### JAVASCRIPT OBJECTS: What is property, key value pair, bracket notation and . dot notation
+#### 🥳 JAVASCRIPT OBJECTS: What is property, key value pair, bracket notation and . dot notation
 
 ```js
 const country = {};
@@ -705,7 +710,7 @@ console.log(length);
 
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length
 
-#### JAVASCRIPT OBJECTS: Object inside an object
+#### 🥳 JAVASCRIPT OBJECTS: Object inside an object
 
 ```js
 const team = {
@@ -723,7 +728,7 @@ console.log(team.player.name);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
 
-#### Objects, multi-word property names
+#### 🥳 Objects, multi-word property names
 
 ```js
 const person = {
@@ -760,7 +765,7 @@ console.log(myCar.fullName());
 ```
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 
-#### How to add new property and how to change a value
+#### 🥳 How to add new property and how to change a value
 
 ```js
 const person = {
@@ -841,7 +846,7 @@ console.log(person);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
 
-#### JAVASCRIPT OBJECTS: How to access property using dynamic name?
+#### 🥳 JAVASCRIPT OBJECTS: How to access property using dynamic name?
 
 ```js
 const city = {
@@ -854,7 +859,7 @@ console.log(city[dynamicName]);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 
-#### JAVASCRIPT OBJECTS: How to add property using dynamic name?
+#### 🥳 JAVASCRIPT OBJECTS: How to add property using dynamic name?
 
 ```js
 const city = {
@@ -870,7 +875,7 @@ console.log(city.district);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 
 
-#### Objects, dynamic property names
+#### 🥳 Objects, dynamic property names
 
 ```js
 //object literal
@@ -888,6 +893,7 @@ city[propertyName] = ['Dobong District', 'Dongdaemun District'];
 console.log(city.district);
 ```
 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 
 #### JAVASCRIPT OBJECTS: Destructuring
@@ -944,6 +950,7 @@ console.table(filteredScorers);
 ```
 
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+- https://developer.mozilla.org/en-US/docs/Web/API/console/table
 
 #### JAVASCRIPT OBJECTS: Sorting an array of objects by property value
 
@@ -1004,8 +1011,9 @@ console.log(rival);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
 
-#### JAVASCRIPT OBJECTS: How to remove a property from an object
+#### 🥳 JAVASCRIPT OBJECTS: How to remove a property from an object
 
 ```js
 const person = {
@@ -1162,7 +1170,7 @@ console.log(woman.child.name);
 
 ### Array
 
-#### How to define and access
+#### 🥳 How to define and access
 
 ```js
 const people = ['Smith', 'Kane', 'Tom']
@@ -1174,7 +1182,7 @@ console.log(people[0]);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array
 
-#### Index of an element in an array
+#### 🥳 Index of an element in an array
 
 ```js
 const people = ['Smith', 'Kane', 'Tom']
@@ -1191,7 +1199,7 @@ console.log(indexOfNoa);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 
-#### Using splice to remove array elements
+#### 🥳 Using splice to remove array elements
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
@@ -1260,7 +1268,7 @@ console.log(numbers);
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
-#### Array forEach() Method
+#### 🥳 Array forEach() Method
 
 ```js
 const members = ['Smith', 'Kane', 'Tom'];
@@ -1274,7 +1282,7 @@ function call(member) {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
-#### JavaScript Arrays: How to flatten an array using flat() method?
+#### 🥳 JavaScript Arrays: How to flatten an array using flat() method?
 
 ```js
 const array1 = [1, 2, [3]];
@@ -1504,7 +1512,7 @@ console.log(currentMonthName);
 
 ### Document & HTMLElement & Element
 
-#### innerText & innerHTML. Change the text of an HTML div element
+#### 🥳 innerText & innerHTML. Change the text of an HTML div element
 
 ```html
 <body>
@@ -1530,7 +1538,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
 
-#### How to read and change title of an HTML document using JS?
+#### 🥳 How to read and change title of an HTML document using JS?
 
 ```html
 <!DOCTYPE html>
@@ -1554,7 +1562,7 @@ console.log(currentMonthName);
 
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/title
 
-#### Change CSS of an HTML element using Javascript
+#### 🥳 Change CSS of an HTML element using Javascript
 
 ```html
 <body>
@@ -1577,7 +1585,7 @@ console.log(currentMonthName);
 
 ### Event reference
 
-#### HTML onclick event attribute
+#### 🥳 HTML onclick event attribute
 
 ```html
 <body>
@@ -1596,7 +1604,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
 - https://developer.mozilla.org/ko/docs/conflicting/Web/API/Element/click_event
 
-#### How to trigger a function by clicking an HTML button?
+#### 🥳 How to trigger a function by clicking an HTML button?
 
 ```html
 <body>
@@ -1616,7 +1624,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/Notification/click_event
 - https://developer.mozilla.org/ko/docs/conflicting/Web/API/Element/click_event
 
-#### How to add a class to an HTML element using JavaScript
+#### 🥳 How to add a class to an HTML element using JavaScript
 
 ```html
 <!DOCTYPE html>
@@ -1649,7 +1657,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 
-#### getElementById & addEventListener
+#### 🥳 getElementById & addEventListener
 
 ```html
 <body>
@@ -1673,7 +1681,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/toggle_event
 
-#### How to toggle background color of a div using an HTML button
+#### 🥳 How to toggle background color of a div using an HTML button
 
 ```html
 <body>
@@ -1848,7 +1856,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 
-#### how to register button click event  using querySelector and id
+#### 🥳 how to register button click event using querySelector and id
 
 ```html
 <body>
@@ -1868,7 +1876,7 @@ console.log(currentMonthName);
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
 
-#### register multiple buttons click event using querySelectorAll and class
+#### 🥳 register multiple buttons click event using querySelectorAll and class
 
 ```html
 <body>
@@ -1926,7 +1934,7 @@ console.log(currentMonthName);
 
 ### Screen
 
-#### get screen width and height
+#### 🥳 get screen width and height
 
 ```js
 let screenHeight = screen.height;
@@ -1972,49 +1980,149 @@ console.log(4);
 
 ## Reference
 
-### Google Spreadsheet(1~44)
-
+- https://developer.mozilla.org/en-US/docs/Glossary/Global_scope
+- https://developer.mozilla.org/en-US/docs/Glossary/Scope
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects
 - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#introducing_constructors
+- https://developer.mozilla.org/en-US/docs/MDN
 - https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide
+- https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript
+- https://developer.mozilla.org/en-US/docs/Web/API/console
+- https://developer.mozilla.org/en-US/docs/Web/API/console/clear
+- https://developer.mozilla.org/en-US/docs/Web/API/console/dir
 - https://developer.mozilla.org/en-US/docs/Web/API/console/log
+- https://developer.mozilla.org/en-US/docs/Web/API/console/table
+- https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Locating_DOM_elements_using_selectors
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/body
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/title
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/write
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/nextElementSibling
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
 - https://developer.mozilla.org/en-US/docs/Web/API/Event/type
 - https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataElement/value
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/toggle_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/click
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement
+- https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 - https://developer.mozilla.org/en-US/docs/Web/API/Notification/click_event
 - https://developer.mozilla.org/en-US/docs/Web/API/Screen
+- https://developer.mozilla.org/en-US/docs/Web/API/Screen/height
+- https://developer.mozilla.org/en-US/docs/Web/API/Screen/width
 - https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#lexical_scoping
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#function_parameters
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions#function_parameters
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Inequality
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block#description
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#description
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch#taking_advantage_of_fall-through
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#description
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- https://stackoverflow.com/questions/28599976/why-is-false-in-javascript
