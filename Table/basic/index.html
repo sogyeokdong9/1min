@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premier League Top Scorers Table (2022-2023)</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body style="font-size: 1em;">
+  <h1>Premier League Top Scorers Table (2022-2023)</h1>
+  <p>More information can be found in <cite><a href="https://www.sportingnews.com/us/soccer/news/premier-league-top-goal-scorer-updated-golden-boot-ranking/1gng0xz39t2h01sqbl6yfkle14" target="_blank" rel="noopener noreferrer">'Premier League top goal scorers 2022-2023: Updated golden boot rankings | Sporting News'</a></cite>.</p>
+  <label for="goals">Minimum Goals</label>
+  <input type="range" id="goals" name="goals" min="1" max="20" value="3">
+  <output>3</output>
+  <!-- TODO: make According to setting minimum goals, display emojis. -->
+  <!-- <output>⚽️</output> -->
+  <div>
+    <time datetime="">Updated as of Monday, October 10.</time>
+  </div>
+  <table id="premierLeague">
+    <caption align="bottom">Premier League Top Scorers Table (2022-2023): Updated as of Monday, October 10.</caption>
+    <thead>
+      <tr>
+        <th class="none">Index</th>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>Club</th>
+        <th class="extra">Goals (PKs)</th>
+        <th class="none">(PKs)</th>
+        <th>Assists</th>
+        <th>Matches</th>
+        <th>Mins</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- TODO: make Display default data screen when page is loaded.-->
+      <!-- iterate -->
+    </tbody>
+    <!-- TODO: Summarize table information according to the minimum goal (reference value).-->
+    <tfoot>
+      <tr>
+        <th>Total</th>
+        <td colspan="7">
+          <details>
+            <summary>Overview</summary>
+            <dl>
+              <dt>Goals: </dt>
+              <dd>There are a total of <strong>25</strong> players who scored more than <strong>1</strong> goal(s).</dd>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who scored the most goals.</dd>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who took the most penalty kicks.</dd>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who took the least penalty kicks.</dd>
+              <dt>Club: </dt>
+              <dd>There are a total of <strong>5</strong> clubs that have scored more than <strong>1</strong> goal(s).</dd>
+              <dd><strong>'a'</strong> is the club that has the most players who scored more than <strong>1</strong> goal(s).</dd>
+              <dd><strong>'a'</strong> is the club that has the least players who scored more than <strong>1</strong> goal(s).</dd>
+              <dt>Assists: </dt>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who assisted the most.</dd>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who assisted the least.</dd>
+              <dt>Matches: </dt>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who played the most matches.</dd>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who played the least matches.</dd>
+              <dt>Mins</dt>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> recorded the most playing time.</dd>
+              <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> recorded the least playing time.</dd>
+            </dl>
+          </details>
+          
+          <!-- <dl>
+            <dt>Goals: </dt>
+            <dd>There are a total of <strong>25</strong> players who scored more than <strong>1</strong> goal(s).</dd>
+            <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who scored the most goals.</dd>
+            <dt>Club: </dt>
+            <dd>There are a total of <strong>5</strong> clubs that have scored more than <strong>1</strong> goal(s).</dd>
+            <dd><strong>'a'</strong> is the club that has the most players who scored more than <strong>1</strong> goal(s).</dd>
+            <dt>Assists: </dt>
+            <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who assisted the most.</dd>
+            <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who assisted the least.</dd>
+            <dt>Matches: </dt>
+            <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who played the most matches.</dd>
+            <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> is the player who played the least matches.</dd>
+            <dt>Mins</dt>
+            <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> recorded the most playing time.</dd>
+            <dd>Among the players who scored more than <strong>1</strong> goal(s), <strong>'a'</strong> recorded the least playing time.</dd>
+          </dl> -->
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <script src="script.js"></script>
+</body>
+</html>
