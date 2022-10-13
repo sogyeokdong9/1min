@@ -49,13 +49,17 @@ body {
     text-align: left;
   }
   tfoot {
+    visibility: hidden;
     background-color:var(--table-tr-hover);
   }
   dt {
     font-weight: bold;
   }
   dd {
-    display: block;
+    // display: block;
+    display: list-item;
+    list-style-type: disc;
+    margin-top: .5em;
   }
   .none {
     display: none

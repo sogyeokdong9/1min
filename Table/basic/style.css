@@ -55,6 +55,7 @@ body {
 }
 
 #premierLeague tfoot {
+  visibility: hidden;
   background-color: var(--table-tr-hover);
 }
 
@@ -63,7 +64,9 @@ body {
 }
 
 #premierLeague dd {
-  display: block;
+  display: list-item;
+  list-style-type: disc;
+  margin-top: .5em;
 }
 
 #premierLeague .none {

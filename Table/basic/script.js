@@ -4,7 +4,8 @@
   "use strict";
   
   const premierLeague = document.querySelector('#premierLeague tbody');
-  let scorers = [
+  const scoreTableFooter = document.querySelector('#premierLeague tfoot');
+  const scorers = [
     {
       rank: 1,
       player: 'Erling Haaland',
@@ -256,20 +257,16 @@
       mins: 649,
     }
   ];
+  Object.freeze(scorers);
   
   function remove_children() {
-    // 부모 노드 선택
     const parent = document.querySelector('#premierLeague tbody');
-    // 자식 노드 삭제
     while(parent.firstChild)  {
       parent.firstChild.remove()
     }
   }
 
-  // goals.addEventListener('oninput', filter(this));
-
   goals.addEventListener('input', function(e) {
-    // console.log(e.target.value);
     const eValue = e.target.value;
     console.log(this);
     goals.setAttribute('value', eValue);
@@ -290,7 +287,6 @@
       const newTdAssists = document.createElement("td");
       const newTdMatches = document.createElement("td");
       const newTdMins = document.createElement("td");
-      // and give it some content
       const newContentIdx = document.createTextNode(index);
       const newContentRank = document.createTextNode(filterdScorers[index].rank);
       const newContentPlayer = document.createTextNode(filterdScorers[index].player);
@@ -300,7 +296,6 @@
       const newContentAssists = document.createTextNode(filterdScorers[index].assists);
       const newContentMatches = document.createTextNode(filterdScorers[index].matches);
       const newContentMins = document.createTextNode(filterdScorers[index].mins);
-      // add the text node to the newly created tr
       newTdIdx.appendChild(newContentIdx);
       newTdRank.appendChild(newContentRank);
       newTdPlayer.appendChild(newContentPlayer);
@@ -319,11 +314,129 @@
       newTr.appendChild(newTdAssists);
       newTr.appendChild(newTdMatches);
       newTr.appendChild(newTdMins);
-      // add the newly created element and its content into the DOM
       const currentTbody = document.querySelector('#premierLeague tbody');
       premierLeague.appendChild(newTr, currentTbody);
     }
+
+    const getFilterRank = [];
+    const getFilterPlayer = [];
+    const getFilterClub = [];
+    const getFilterGoals = [];
+    const getFilterPks = [];
+    const getFilterAssists = [];
+    const getFilterMatches = [];
+    const getFilterMins = [];
+
+    for (const iterator of filterdScorers) {
+      getFilterRank.push(iterator.rank);
+      getFilterPlayer.push(iterator.player);
+      getFilterClub.push(iterator.club);
+      getFilterGoals.push(iterator.goals);
+      getFilterPks.push(iterator.pks);
+      getFilterAssists.push(iterator.assists);
+      getFilterMatches.push(iterator.matches);
+      getFilterMins.push(iterator.mins);
+    }
+
+    const collectedScorers = {}
+    collectedScorers.rank = getFilterRank;
+    collectedScorers.player = getFilterPlayer;
+    collectedScorers.club = getFilterClub;
+    collectedScorers.goals = getFilterGoals;
+    collectedScorers.pks = getFilterPks;
+    collectedScorers.assists = getFilterAssists;
+    collectedScorers.matches = getFilterMatches;
+    collectedScorers.mins = getFilterMins;
+
+    const getGoals = eValue;
+    const getMostGoals = Math.max(...collectedScorers.goals)
+    const getLeastGoals = Math.min(...collectedScorers.goals)
+    const getMostPks = Math.max(...collectedScorers.pks)
+    const getLeastPks = Math.min(...collectedScorers.pks)    
+    const getMostAssists = Math.max(...collectedScorers.assists)
+    const getLeastAssists = Math.min(...collectedScorers.assists)    
+    const getMostMatch = Math.max(...collectedScorers.matches)
+    const getLeastMatch = Math.min(...collectedScorers.matches)    
+    const getMostMins = Math.max(...collectedScorers.mins)
+    const getLeastMins = Math.min(...collectedScorers.mins)    
+
+    console.log('most goals: ', getMostGoals);
+    console.log('least goals: ', getLeastGoals);
+    console.log('most PKs: ', getMostPks);
+    console.log('least PKs: ', getLeastPks);
+    console.log('most Assists: ', getMostAssists);
+    console.log('least Assists: ', getLeastAssists);
+    console.log('most Match: ', getMostMatch);
+    console.log('least Match: ', getLeastMatch);
+    console.log('most Match: ', getMostMins);
+    console.log('least Match: ', getLeastMins);
+
+    function find_player(value) {
+      const mostGoalsPlayer = filterdScorers.filter( s => s.goals === getMostGoals );
+      const leastGoalsPlayer = filterdScorers.filter( s => s.goals === getLeastGoals );
+      const mostPksPlayer = filterdScorers.filter( s => s.pks === getMostPks );
+      const leastPksPlayer = filterdScorers.filter( s => s.pks === getLeastPks );
+      
+      function getPlayer(name) {
+        const result = [];
+        for (const iterator of name) {
+          result.push(iterator.player);
+        }
+        return result;
+      }
+
+      if ( value === getMostGoals ) {
+        return getPlayer(mostGoalsPlayer);
+      } else if ( value === getLeastGoals ) {
+        return getPlayer(leastGoalsPlayer);
+      } else if ( value === getMostPks ) {
+        return getPlayer(mostPksPlayer);
+      } else if ( value === getLeastPks ) {
+        return getPlayer(leastPksPlayer);
+      }
+
+    }
+
+    function count_duplicate(value, name) {
+      const counts = {}
+      for (let index = 0; index < value.length; index++) {
+        let element = value[index];
+        console.log(name, element);
+        if( counts[element] ) {
+          counts[element] += 1;
+        } else {
+          counts[element] = 1;
+        }
+      }
+      console.log(name, counts);
+      for (const key in counts) {
+        if (counts[key] >=  2) {
+          console.log( `${name}Duplicated - ${key} counted: ${counts[key]} times.` )
+        }
+      }
+    }
+    // count_duplicate(collectedScorers.rank);
+    // count_duplicate(collectedScorers.player);
+    // count_duplicate(collectedScorers.club);
+    // count_duplicate(collectedScorers.goals);
+    // count_duplicate(collectedScorers.pks);
+    // count_duplicate(collectedScorers.assists);
+    // count_duplicate(collectedScorers.matches);
+    count_duplicate(collectedScorers.mins, `Mins`);
+  
+    const totalGoals = [
+      `
+      <dt>Goals: </dt>
+      <dd>There are a total of <strong>${collectedScorers.player.length}(${collectedScorers.player.join(', ')})</strong> players who scored more than <strong>${getGoals}</strong> goal(s).</dd>
+      <dd>Among the players who scored more than <strong>${getGoals}</strong> goal(s), <strong>${find_player(getMostGoals).join(', ')}</strong> is the player who scored the most goals.</dd>
+      <dd>Among the players who scored more than <strong>${getGoals}</strong> goal(s), <strong>${find_player(getMostPks).join(', ')}</strong> is the player who took the most penalty kicks.</dd>
+      <dd>Among the players who scored more than <strong>${getGoals}</strong> goal(s), <strong>${find_player(getLeastPks).join(', ')}</strong> is the player who took the least penalty kicks.</dd>
+      `
+    ]
+
+    details.innerHTML = totalGoals;
+
+    goals.setAttribute('max', getMostGoals);
+    scoreTableFooter.style.visibility = 'visible';
   })
-
-
 })();
