@@ -24,10 +24,10 @@
   --dark-background: rgba(255, 255, 255, 0.08);
   --dark-table-header: rgba(255, 255, 255, 0.04);
   --widget-button-background: var(--light-background);
-  --table-padding: 1.125em 1em 1em;
+  --table-padding: 1.125em 0.875em 1em;
   --large-table-padding: 1.250em 1em 1.125em;
   --middle-table-padding: var(--table-padding);
-  --small-table-padding: 0.750em 1em 0.62550em;
+  --small-table-padding: 0.750em 0.750em 0.62550em;
   --light-table-border: 1px solid var(--light-border);
   --dark-table-border: 1px solid var(--dark-border);
   --light-table-tr-hover: var(--light-background);
@@ -74,6 +74,8 @@ kbd {
 }
 
 body {
+  padding: 0;
+  margin: 0;
   background-color: var(--white);
   font-size: var(--base-font);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -131,20 +133,11 @@ body {
   margin: 0 auto;
 }
 
-#document-header-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 1em 0 5em;
+#document-page {
+  position: relative;
 }
 
-#document-header-container .widget .button {
+._button, #document-header-container .widget .button {
   border-radius: 1.68em;
   border-width: 0;
   line-height: 1.68;
@@ -156,9 +149,54 @@ body {
           box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-#document-header-container .widget .button:hover {
+._button:hover, #document-header-container .widget .button:hover {
   color: var(--color-black);
   background-color: var(--dark-a);
+}
+
+._button_default, #player-container ul li .button,
+#club-container ul li .button {
+  border-radius: 1.24em;
+  border-width: 0;
+  line-height: 1.24;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  padding: .5em 1em;
+  color: var(--color-black);
+  background: var(--widget-button-background);
+  -webkit-box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+          box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+._button_default:hover, #player-container ul li .button:hover,
+#club-container ul li .button:hover {
+  color: var(--color-black);
+  background-color: var(--dark-a);
+}
+
+#document-header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em 1em 5em;
+}
+
+#controller {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #goals + output::before {
@@ -167,6 +205,26 @@ body {
 
 #goals + output::after {
   content: '🔺 ';
+}
+
+#logo svg {
+  height: 115px;
+}
+
+#player-container,
+#club-container {
+  display: none;
+}
+
+#player-container ul,
+#club-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#player-container ul li,
+#club-container ul li {
+  display: inline-block;
 }
 
 .date-time {
@@ -179,6 +237,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   color: var(--color-black);
+  margin-bottom: 5em;
 }
 
 #premierLeague thead {
@@ -252,6 +311,18 @@ body {
 }
 
 .dark-theme #document-header-container .widget button:hover {
+  color: var(--color-black);
+  background-color: var(--light-a);
+}
+
+.dark-theme #player-container .button,
+.dark-theme #club-container .button {
+  color: var(--color-white);
+  background: var(--dark-background);
+}
+
+.dark-theme #player-container .button:hover,
+.dark-theme #club-container .button:hover {
   color: var(--color-black);
   background-color: var(--light-a);
 }
